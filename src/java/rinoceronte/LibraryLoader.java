@@ -10,42 +10,41 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-
 public class LibraryLoader {
 
-	public static void main(String[] args) {
-		ScriptEngineManager factory = new ScriptEngineManager();
-		ScriptEngine engine = factory.getEngineByName("nashorn");
+    public static void main(String[] args) {
+        ScriptEngineManager factory = new ScriptEngineManager();
+        ScriptEngine engine = factory.getEngineByName("nashorn");
 
-		ScriptContext context = engine.getContext();
-		
-		FileReader in = null;
-		try {
-			in = new FileReader("src/js/rinoceronte/library.js");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			engine.eval(in, context);
-		} catch (ScriptException e) {
-			e.printStackTrace();
-		}
-		
-		context.setAttribute("__dirname", "/home/foo", ENGINE_SCOPE);
-		context.setAttribute("__filename", "client.js", ENGINE_SCOPE);
+        ScriptContext context = engine.getContext();
 
-		try {
-			in = new FileReader("src/js/rinoceronte/client.js");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			engine.eval(in, context);
-		} catch (ScriptException e) {
-			e.printStackTrace();
-		}		
-		
-	}
+        FileReader in = null;
+        try {
+            in = new FileReader("src/js/rinoceronte/library.js");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            engine.eval(in, context);
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+
+        context.setAttribute("__dirname", "/home/foo", ENGINE_SCOPE);
+        context.setAttribute("__filename", "client.js", ENGINE_SCOPE);
+
+        try {
+            in = new FileReader("src/js/rinoceronte/client.js");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            engine.eval(in, context);
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
