@@ -1,0 +1,71 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "Identifier",
+          "name": "sayMyName"
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "yo",
+            "raw": "'yo'"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "Identifier",
+          "name": "threeTimes"
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "what up",
+            "raw": "'what up'"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "Identifier",
+          "name": "print"
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "__filename"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "Identifier",
+          "name": "print"
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "__dirname"
+          }
+        ]
+      }
+    }
+  ]
+}
