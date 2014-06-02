@@ -21,7 +21,7 @@ public class LibraryLoader {
 		
 		FileReader in = null;
 		try {
-			in = new FileReader("src/rinoceronte/library.js");
+			in = new FileReader("src/js/rinoceronte/library.js");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -36,7 +36,7 @@ public class LibraryLoader {
 		context.setAttribute("__filename", "client.js", ENGINE_SCOPE);
 
 		try {
-			in = new FileReader("src/rinoceronte/client.js");
+			in = new FileReader("src/js/rinoceronte/client.js");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
