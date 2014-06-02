@@ -1,9 +1,11 @@
 
 var lib = Java.type('rinoceronte.Library'),
 
-    sayMyName = lib.sayMyName,
+    global = this;
 
-    threeTimes = function (name) {
+    global.sayMyName = lib.sayMyName,
+
+    global.threeTimes = function (name) {
         for (var i = 1; i <= 3; i++) {
             sayMyName(i + ': ' +name);
         }
